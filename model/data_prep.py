@@ -3,6 +3,8 @@ import sys
 import numpy as np
 
 
+# The function is taken over from the following source:
+# Source: https://github.com/numpy/numpy-tutorials/blob/main/content/tutorial-deep-learning-on-mnist.md
 def one_hot_encoding(labels, dimension=10):
     # Define a one-hot variable for an all-zero vector
     # with 10 dimensions (number labels from 0 to 9).

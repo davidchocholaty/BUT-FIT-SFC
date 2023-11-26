@@ -7,6 +7,7 @@ from engine.nn.module import Module
 
 class Layer(Module):
     def __init__(self, inputs_count, outputs_count, activation_function_str):
+        # The seed is provided for the purpose of starting with the exact same defined model for all optimizers.
         np.random.seed(0)
         self.w = Tensor(np.random.uniform(low=-1, high=1, size=(inputs_count, outputs_count)))
         # self.w = Tensor(np.random.uniform(low=-1, high=1, size=(inputs_count, outputs_count)))

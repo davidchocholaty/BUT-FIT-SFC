@@ -15,6 +15,7 @@ class Optimizer:
                 p.data -= learning_rate * p.grad
 
     class RMSpropOptimizer(Function):
+        # https://www.fit.vutbr.cz/study/courses/SFC/private/zboril2020/20sfc_2.pdf
         def __init__(self, eps=10 ** (-6), beta=0.9, params_size_list=None):
             if params_size_list is None:
                 params_size_list = []
@@ -83,6 +84,7 @@ class Optimizer:
                 parameters[i].data -= (learning_rate / (np.sqrt(v) + self._eps)) * self._m[i]
 
     class AmsGradOptimizer(AdamOptimizer):
+        # https://www.fit.vutbr.cz/study/courses/SFC/private/zboril2020/20sfc_2.pdf
         def __init__(self,
                      beta_1=0.9,
                      beta_2=0.999,

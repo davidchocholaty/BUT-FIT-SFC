@@ -1,5 +1,3 @@
-import numpy as np
-
 from engine.nn.mlp import MultilayerPerceptron
 from engine.opt.optimizer import Optimizer
 from model.constants import PIXELS_PER_IMAGE, HIDDEN_LAYER_SIZE, NB_LABELS, HIDDEN_LAYER_ACT, OUTPUT_LAYER_ACT
