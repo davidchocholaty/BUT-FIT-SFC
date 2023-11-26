@@ -88,7 +88,7 @@ class Optimizer:
         def __init__(self,
                      beta_1=0.9,
                      beta_2=0.999,
-                     eps=10 ** (-7),
+                     eps=10 ** (-8),
                      params_size_list=None):
             super().__init__(beta_1, beta_2, eps, params_size_list)
             self._v_2 = [np.zeros(params) for params in params_size_list]
