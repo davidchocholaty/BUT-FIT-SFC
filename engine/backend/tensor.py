@@ -54,6 +54,26 @@ class Tensor:
 
         return out
 
+    def log(self):
+        out = Tensor(np.log(self.data), _children=(self,))
+
+        def _backward():
+            self.grad += (self.data ** -1) * out.grad
+
+        out._backward = _backward
+
+        return out
+
+    def exp(self):
+        out = Tensor(np.exp(self.data), _children=(self,))
+
+        def _backward():
+            self.grad += out.data * out.grad
+
+        out._backward = _backward
+
+        return out
+
     def mean(self, axis=None, keepdims=False):
         out = Tensor(np.mean(self.data, axis=axis, keepdims=keepdims), _children=(self,))
 

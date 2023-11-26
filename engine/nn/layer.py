@@ -7,7 +7,9 @@ from engine.nn.module import Module
 
 class Layer(Module):
     def __init__(self, inputs_count, outputs_count, activation_function_str):
+        np.random.seed(0)
         self.w = Tensor(np.random.uniform(low=-1, high=1, size=(inputs_count, outputs_count)))
+        # self.w = Tensor(np.random.uniform(low=-1, high=1, size=(inputs_count, outputs_count)))
         self.b = Tensor(np.zeros(outputs_count))
 
         assert activation_function_str in ["ReLu", "Softmax", "Linear"], "invalid activation function definition"
