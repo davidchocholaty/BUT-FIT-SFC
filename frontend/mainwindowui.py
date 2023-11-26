@@ -117,8 +117,6 @@ class MainWindowUI(object):
         else:
             self.amsgrad_model = None
 
-        # TODO jestli rozlisovat full nebo small dataset
-
     def clear_axes(self):
         self.horizontal_layout.removeWidget(self.canvas)
         self.canvas.deleteLater()

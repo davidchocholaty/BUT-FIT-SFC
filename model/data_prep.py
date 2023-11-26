@@ -1,3 +1,5 @@
+import sys
+
 import numpy as np
 
 
@@ -11,37 +13,40 @@ def one_hot_encoding(labels, dimension=10):
 
 class DataPreprocessor:
     def __init__(self):
-        self.test_labels = None
         self.training_labels = None
-        self.test_images = None
         self.training_images = None
         self.x_train = None
         self.y_train = None
         self.train_data = None
-        self.x_test = None
-        self.y_test = None
         self.data = None
-        self.test_data = None
+        # self.test_labels = None
+        # self.test_images = None
+        # self.x_test = None
+        # self.y_test = None
+        # self.test_data = None
 
     def create_dataset(self):
-        # self.data = np.genfromtxt('data/train.csv', delimiter=',', skip_header=1)
-        self.data = np.genfromtxt('data/train_small.csv', delimiter=',', skip_header=1)
+        try:
+            self.data = np.genfromtxt('data/train_small.csv', delimiter=',', skip_header=1)
+        except FileNotFoundError:
+            print("\nError: the file \"data/train_small.csv\" does not exist. Please add the dataset file.")
+            sys.exit(1)
 
         m, n = self.data.shape
         np.random.shuffle(self.data)
 
-        # TODO rozhodnout jak s datasetem pracovat
-        self.test_data = self.data[0:1000]
-        self.y_test = self.test_data[:, 0]
-        self.x_test = self.test_data[:, 1:n]
+        # self.test_data = self.data[0:1000]
+        # self.y_test = self.test_data[:, 0]
+        # self.x_test = self.test_data[:, 1:n]
 
         self.train_data = self.data[1000:m]
         self.y_train = self.train_data[:, 0]
         self.x_train = self.train_data[:, 1:n]
 
-        training_sample, test_sample = 1000, 1000
+        # training_sample, test_sample = 1000, 1000
+        training_sample = 1000
         self.training_images = self.x_train[0:training_sample] / 255
-        self.test_images = self.x_test[0:test_sample] / 255
+        # self.test_images = self.x_test[0:test_sample] / 255
 
         self.training_labels = one_hot_encoding(self.y_train[:training_sample])
-        self.test_labels = one_hot_encoding(self.y_test[:test_sample])
+        # self.test_labels = one_hot_encoding(self.y_test[:test_sample])
