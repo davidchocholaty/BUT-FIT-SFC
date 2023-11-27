@@ -1,4 +1,11 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: util.py
+
 import numpy as np
+
+# The source code of the following file is taken over from the implementation of the Tensorgrad library.
+# Source: https://github.com/hkxIron/tensorgrad/blob/6098d54eeeeeebf69ee89a2dcb0a7d8b60b95c16/tensorgrad/util.py
 
 
 def get_repeat_axis(left_shape, right_shape):

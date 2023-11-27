@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: main.py
+
 from frontend.mainwindowui import MainWindowUI
 
 from PyQt5.QtWidgets import QApplication, QMainWindow

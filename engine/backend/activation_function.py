@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: activation_function.py
+
 import numpy as np
 
 
@@ -31,6 +35,8 @@ class ActivationFunction:
 
             return exp_x / np.sum(exp_x, axis=axis, keepdims=True)
 
+        # The following function is based on the function from the following source.
+        # Source: https://github.com/hkxIron/tensorgrad/blob/6098d54eeeeeebf69ee89a2dcb0a7d8b60b95c16/tensorgrad/function.py#L84
         @staticmethod
         def backward(x_data, y_data, y_grad, batch_axis=0, **kwargs):
             batch_size = y_data.shape[batch_axis]

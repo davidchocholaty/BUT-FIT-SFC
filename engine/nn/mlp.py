@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: mlp.py
+
 from engine.nn.module import Module
 from engine.nn.layer import Layer
 from engine.opt.optimizer import Optimizer

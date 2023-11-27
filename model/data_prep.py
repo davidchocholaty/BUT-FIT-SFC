@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: data_prep.py
+
 import sys
 
 import numpy as np

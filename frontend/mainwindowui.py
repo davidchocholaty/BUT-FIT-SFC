@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: mainwindowui.py
+
 from engine.nn.mlp import MultilayerPerceptron
 from engine.opt.optimizer import Optimizer
 from model.constants import PIXELS_PER_IMAGE, HIDDEN_LAYER_SIZE, NB_LABELS, HIDDEN_LAYER_ACT, OUTPUT_LAYER_ACT
@@ -10,6 +14,9 @@ from matplotlib.figure import Figure
 from PyQt5.QtWidgets import QWidget, QLabel, QLineEdit, QPushButton, QCheckBox, QHBoxLayout
 from PyQt5.QtCore import QRect, QLocale, Qt, QMetaObject
 from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont, QMovie
+
+# The base structure of the following source code is inspired by the implementation of the following source.
+# Source: https://github.com/RichardKlem/SFC/blob/941d78ba02902651dfc5441a4694b3d5344170dd/ui_form.py
 
 
 class MainWindowUI(object):

@@ -1,3 +1,7 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: train.py
+
 from engine.backend.tensor import Tensor
 
 from PyQt5.QtWidgets import QApplication
@@ -9,6 +13,8 @@ def cross_entropy(scores, labels):
     return -((labels * scores.log()).sum())
 
 
+# The following source inspired the source code of the following function.
+# Source: https://github.com/hkxIron/tensorgrad/blob/6098d54eeeeeebf69ee89a2dcb0a7d8b60b95c16/test/test_network.py#L68
 def loss(batch_size=None, X=None, y=None, model=None):
     # inline DataLoader
     if batch_size is None:

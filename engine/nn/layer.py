@@ -1,8 +1,15 @@
+# Project: Demonstration of backpropagation learning - basic algorithm and selected optimizer
+# Author: David Chocholaty <xchoch09@stud.fit.vutbr.cz>
+# File: layer.py
+
 import numpy as np
 
 from engine.backend.activation_function import ActivationFunction
 from engine.backend.tensor import Tensor
 from engine.nn.module import Module
+
+# The source code of the following file is based on the implementation of the Tensorgrad library.
+# Source: https://github.com/hkxIron/tensorgrad/blob/6098d54eeeeeebf69ee89a2dcb0a7d8b60b95c16/tensorgrad/network.py
 
 
 class Layer(Module):
